@@ -1,0 +1,41 @@
+.menu 
+  background-color: $header
+  width: 90px
+  height: calc(100vh - 100px)
+  z-index: 3
+  // transform: translateX(-340px)
+  &-nav 
+    height: 100%
+    display: flex
+    flex-wrap: wrap 
+    justify-content: flex-start
+
+  &-item 
+    width: 100%
+    padding-left: 30px
+    display: flex
+    align-items: center
+    opacity: 0.7
+    cursor: pointer
+    &__img
+      margin-right: 25px 
+    &__text 
+      color: $text
+      position: absolute
+      left: 90px
+    &_current 
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        right: 0px
+        top: calc( 50% - 11px )
+        width: 11px
+        height: 22px
+        background-color: $primary
+        border-radius: 100% 0 0 100% / 50% 0 0 50%    
+
+@media ( min-width: 992px)
+  .menu-item:hover 
+    background-color: $footer
+    opacity: 1
