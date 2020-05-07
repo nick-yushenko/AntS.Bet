@@ -7,6 +7,7 @@
 
   menuTrigger.addEventListener('click', function () {
     if (!isOpen) {
+      menu.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
       if (window.innerWidth <= 425)
         menu.style.width = '100%'
       else
@@ -16,6 +17,8 @@
       })
       isOpen = true
     } else {
+      menu.style.boxShadow = 'none'
+
       if (window.innerWidth <= 1024)
         menu.style.width = '80px'
       else
