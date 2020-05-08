@@ -25,9 +25,9 @@
         menu.style.transform = 'translateX(-100px)'
         menu.style.width = '0'
       } else if (window.innerWidth <= 1024)
-        menu.style.width = '80px'
+        menu.style.width = '70px'
       else
-        menu.style.width = '96px'
+        menu.style.width = '70px'
 
       // menu.style.transform = 'translateX(-340px)'
       isOpen = false
