@@ -11,9 +11,10 @@
       if (window.innerWidth <= 768) {
         menu.style.transform = 'translateX(0)'
         menu.style.width = '340px'
-      } else if (window.innerWidth <= 425)
+      }
+      if (window.innerWidth <= 425) {
         menu.style.width = '100%'
-      else
+      } else
         menu.style.width = '340px'
       menuItems.forEach(function (item) {
         // item.style.display = 'block'
@@ -24,7 +25,8 @@
       if (window.innerWidth <= 768) {
         menu.style.transform = 'translateX(-100px)'
         menu.style.width = '0'
-      } else if (window.innerWidth <= 1024)
+      }
+      if (window.innerWidth <= 1024)
         menu.style.width = '70px'
       else
         menu.style.width = '70px'
