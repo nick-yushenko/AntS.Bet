@@ -24,7 +24,7 @@
 
 
   function initSwiper() {
-    mySwiper = new Swiper('.swiper-container', {
+    mySwiper = new Swiper('.office-news-container', {
       direction: 'horizontal',
       loop: true,
       speed: 220,
