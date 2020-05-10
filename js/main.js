@@ -13,19 +13,15 @@
 
   var switches = document.querySelectorAll('.switch-btn')
 
-  switches.forEach(function (switchItem) {
-    switchItem.addEventListener('click', function () {
-      switchItem.classList.toggle('switch-on')
+  if (switches) {
+    switches.forEach(function (switchItem) {
+      switchItem.addEventListener('click', function () {
+        switchItem.classList.toggle('switch-on')
+      })
     })
-  })
+  }
 
 
-
-
-  var mySwiper
-  var mySwiperContainer = document.querySelector('.office-news-container')
-  var mySwiperWrapper = document.querySelector('.office-news__slider')
-  var myNewsBlock = document.querySelectorAll('.office-news-item')
 
   function initSwiper() {
     mySwiper = new Swiper('.swiper-container', {
@@ -50,5 +46,20 @@
   }, false);
 
 
+
+  // payment 
+
+  var paymentBtns = document.querySelectorAll('.payment-buttons__item')
+
+  if (paymentBtns) {
+    paymentBtns.forEach(function (item) {
+      item.addEventListener('click', function () {
+        paymentBtns.forEach(function (item) {
+          item.classList.remove('btn-primary')
+        })
+        item.classList.add('btn-primary')
+      })
+    })
+  }
 
 }());
