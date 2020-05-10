@@ -22,9 +22,14 @@
   }
 
 
+  // var packegesSwiper = new Swiper('.packeges-wrap', {
+  //   direction: 'horizontal',
+  //   speed: 220,
+  //   slidesPerView: 3,
+  // })
 
   function initSwiper() {
-    mySwiper = new Swiper('.office-news-container', {
+    var newsSwiper = new Swiper('.office-news-container', {
       direction: 'horizontal',
       loop: true,
       speed: 220,
