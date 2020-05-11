@@ -67,4 +67,22 @@
     })
   }
 
+  var modal = document.querySelector('.modal-wrap')
+  var uiAdd = document.querySelectorAll('.path-item__logo.empty')
+
+  if (uiAdd) {
+    uiAdd.forEach(function (item) {
+      item.addEventListener('click', function () {
+        modal.style.display = 'flex'
+      })
+    })
+
+    modal.addEventListener('click', function () {
+      modal.style.display = 'none'
+    })
+    // modal.querySelector('.modal').addEventListener('click', function () {
+    //   modal.style.display = 'flex'
+    // })
+  }
+
 }());

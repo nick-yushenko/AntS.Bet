@@ -14,6 +14,17 @@
 
 <body>
 
+  <div class="modal-wrap">
+    <div class="modal box">
+      <h3 class="box-title">Добавить нового пользователя в структуру</h3>
+      <p class="modal-text">Отправьте эту ссылкц партнеру. После регистрации и оплаты пакета он встанет на данное место
+        в бинаре. Если место уже будет занято к моменту заключения соглашения, то патнер встанет в спонсорскую ногу ниже
+        этого места.</p>
+      <div class="office-invite-link modal-link">https://antsbet.ru/demo/register</div>
+      <button class="btn btn-primary modal-btn">Скопировать</button>
+
+    </div>
+  </div>
   <header class="header">
     <div class="wrap content">
       <a href="office.html" class="header-logo"><img src="img/main/logo.svg" alt=""></a>
@@ -83,7 +94,7 @@
         <h2 class="section-title">Структура</h2>
 
         <div class="structure-wrap content">
-          <div class="structure-search box">
+          <form action="#" class="structure-search box">
             <h3 class="box-title">Поиск по структуре</h3>
             <div class="structure-search-input-block">
               <input type="text" class="input structure-search-input" placeholder="ID/Фамилия/Nickname">
@@ -97,7 +108,7 @@
                 <option value="4">4 уровня</option>
 
               </select>
-              <img src="img/structure/drop-icon.svg" alt="">
+              <!-- <img src="img/structure/drop-icon.svg" alt=""> -->
 
             </div>
 
@@ -126,7 +137,7 @@
 
 
 
-          </div>
+          </form>
 
           <div class="structure-ui box">
             <h3 class="box-title">Ваша структура</h3>
@@ -140,6 +151,10 @@
 
                     <div class="path-item__logo platinum">
                       <img src="img/structure/logo.png" alt="">
+                      <!-- <div class="drop">
+                        Бонус начисляется от суммы прибыли: <br> 1 уровень — 3%; <br> 2 уровень — 1,5%; <br> 3 уровень —
+                        0,4%; <br> 4 уровень — 0,4%.
+                      </div> -->
                     </div>
                     <div class="path-item__descr">
                       <span class="path-item__name">Alexander</span>
@@ -157,7 +172,7 @@
                   <div class="path-item ">
                     <span class="path-item__board"></span>
 
-                    <div class="path-item__logo user">
+                    <div class="path-item__logo standart user">
                       <img src="img/structure/ui-logo.svg" alt="">
                     </div>
                     <div class="path-item__descr">
@@ -174,7 +189,7 @@
                   <div class="path-item ">
                     <span class="path-item__board"></span>
 
-                    <div class="path-item__logo vip">
+                    <div class="path-item__logo standart vip">
                       <img src="img/structure/ui-logo.svg" alt="">
                     </div>
                     <div class="path-item__descr">
@@ -192,7 +207,7 @@
 
                   <div class="path-item ">
 
-                    <div class="path-item__logo gold">
+                    <div class="path-item__logo standart gold">
                       <img src="img/structure/ui-logo.svg" alt="">
                     </div>
                     <div class="path-item__descr">
@@ -214,11 +229,11 @@
                     <div class="path-item__logo empty">
                       +
                     </div>
-       
+
                   </div>
 
                   <div class="path-item ">
-                    <div class="path-item__logo user">
+                    <div class="path-item__logo standart user">
                       <img src="img/structure/ui-logo.svg" alt="">
                     </div>
                     <div class="path-item__descr">
@@ -231,7 +246,7 @@
                     </div>
                   </div>
 
-        
+
                 </div>
               </div>
             </div>
@@ -293,7 +308,7 @@
         </div>
 
         <div class="structure-wrap structure-wrap__top  content">
-          <div class="structure-filter box">
+          <form action="#" class="structure-filter box">
             <h3 class="box-title">Фильтр</h3>
 
             <div class="structure-filter-buttons">
@@ -313,7 +328,7 @@
               <button class="structure-filter-buttons__btn  btn btn-primary">Применить</button>
               <button class="structure-filter-buttons__btn btn">Сбросить</button>
             </div>
-          </div>
+          </form>
 
           <div class="structure-found box">
             <h3 class="box-title">Найдено пользователей: 365</h3>
