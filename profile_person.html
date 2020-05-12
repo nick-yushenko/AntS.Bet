@@ -108,47 +108,31 @@
             </div>
 
             <div class="profile-nav box">
-              <a href="profile.html" class="profile-nav__item current">Общая информация</a>
-              <a href="profile_person.html" class="profile-nav__item">Личные данные </a>
+              <a href="profile.html" class="profile-nav__item ">Общая информация</a>
+              <a href="profile_person.html" class="profile-nav__item current">Личные данные </a>
               <a href="profile_password.html" class="profile-nav__item">Пароли</a>
             </div>
           </div>
           <form action="#" class="profile-content right box">
-            <span class="profile-content__placeholder">Никнейм</span>
-            <input type="text" class="profile-content__input input" placeholder="Zezeroninn">
+            <span class="profile-content__placeholder">Имя</span>
+            <input type="text" class="profile-content__input input" placeholder="Александр">
 
-            <div class="profile-content__checkbox">
-              <span class="profile-content__placeholder">Скрыть ФИО</span>
-              <div class=" switch-btn"></div>
+            <span class="profile-content__placeholder">Фамилия</span>
+            <input type="text" class="profile-content__input input" placeholder="Иванов ">
+
+            <span class="profile-content__placeholder">Отчество</span>
+            <input type="text" class="profile-content__input input" placeholder="Семенович ">
+
+            <span class="profile-content__placeholder">Дата рождения</span>
+            <div class="profile-content__date">
+              <input class="datepicker-here profile-content__input input" type="text" readonly=""
+                placeholder="дд/мм/гггг">
+              <div class="profile-content__img">
+                <img src="img/profile/calendar-icon.svg" alt="">
+              </div>
             </div>
-            <span class="profile-content__placeholder">ID спонсора</span>
-            <input type="text" class="profile-content__input input" placeholder="123123123 ">
-
-            <span class="profile-content__placeholder">ФИО спонсора</span>
-            <div class="profile-content__block">
-              <input type="text" class="profile-content__input input" placeholder="Иванов ">
-              <input type="text" class="profile-content__input input" placeholder="Александр ">
-              <input type="text" class="profile-content__input input" placeholder="Семенович ">
-            </div>
-
-            <span class="profile-content__placeholder"> Номер телефона</span>
-            <input type="text" class="profile-content__input input" placeholder="+7 (988) 988-98-88 ">
-
-
-            <span class="profile-content__placeholder"> Подключение Telegram</span>
-            <div class="profile-content__telegram">
-              <input type="text" class="profile-content__input input" placeholder=" Ваш логин в Telegram ">
-              <button class="profile-content__btn_telegram btn btn-primary">
-                <img src="img/profile/telegram-icon.svg" alt="">
-              </button>
-            </div>
-
-
-           
 
             <button class="profile-content__btn btn btn-primary">Сохранить</button>
-
-
 
           </form>
         </div>
