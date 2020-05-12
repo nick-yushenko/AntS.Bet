@@ -22,11 +22,37 @@
   }
 
 
-  // var packegesSwiper = new Swiper('.packeges-wrap', {
-  //   direction: 'horizontal',
-  //   speed: 220,
-  //   slidesPerView: 3,
-  // })
+  if (window.innerWidth <= 1300) {
+    var packegesSwiper = new Swiper('.packeges-wrap ', {
+      direction: 'horizontal',
+      speed: 220,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      updateOnWindowResize: true,
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        // when window width is >= 500px
+        500: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        // when window width is >= 500px
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+      }
+
+    })
+
+  }
 
   function initSwiper() {
     var newsSwiper = new Swiper('.office-news-container', {
@@ -67,8 +93,11 @@
     })
   }
 
+
+
   var modal = document.querySelector('.modal-wrap')
   var uiAdd = document.querySelectorAll('.path-item__logo.empty')
+
 
   if (uiAdd) {
     uiAdd.forEach(function (item) {
@@ -77,12 +106,11 @@
       })
     })
 
-    modal.addEventListener('click', function () {
-      modal.style.display = 'none'
+    document.addEventListener('click', function (event) {
+      if (event.target.className == 'modal-wrap') {
+        modal.style.display = 'none';
+      };
     })
-    // modal.querySelector('.modal').addEventListener('click', function () {
-    //   modal.style.display = 'flex'
-    // })
   }
 
 }());

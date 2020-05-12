@@ -16,12 +16,23 @@
 
   <header class="header">
     <div class="wrap content">
-      <a href="office.html" class="header-logo"><img src="img/main/logo.svg" alt=""></a>
+      <a href="#" class="header-logo"><img src="img/main/logo.svg" alt=""></a>
       <a href="#" class="header-btn btn">Скачать бота</a>
-      <a href="#" class="header-name">Nickname</a>
+      <div class="header-name js-miniprofileTrigger">Nickname</div>
       <div class="header-burger js-menuTrigger"><img src="img/main/burger.svg" alt=""></div>
     </div>
+
   </header>
+
+  <div class="miniprofile">
+    <div class="miniprofile-info">
+      <div class="miniprofile-info__img"><img src="" alt=""></div>
+      <span class="miniprofile-info__name">Alexander</span>
+      <span class="miniprofile-info__email">email@email.com</span>
+      <a href="profile.html" class="btn miniprofile-info__btn">Профиль</a>
+    </div>
+    <button class="miniprofile-btn">Выйти</button>
+  </div>
 
 
   <div class="menu">
@@ -85,9 +96,19 @@
         </div>
         <h2 class="section-title">Пакеты</h2>
 
+<!-- 
+        <div class="swiper-container test-container">
+          <div class="swiper-wrapper test-wrap">
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
 
+        </div> -->
+
+         
         <div class="packeges-wrap swiper-container ">
-          <div class="swiper-wrapper content">
+          <div class="swiper-wrapper packeges-wrapper content">
+   
 
             <div class="packeges-item swiper-slide box">
               <div class="packeges-item__img"><img src="img/packeges/user-icon.svg" alt=""></div>
@@ -318,9 +339,13 @@
 
             </div>
 
+          
 
           </div>
-        </div>
+          <div class="swiper-pagination packeges-pagination">
+          </div>
+
+        </div> 
 
 
 
