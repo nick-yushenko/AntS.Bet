@@ -21,7 +21,7 @@
       <div class="header-name js-miniprofileTrigger">Nickname</div>
       <div class="header-burger js-menuTrigger"><img src="img/main/burger.svg" alt=""></div>
     </div>
-   
+
   </header>
 
   <div class="miniprofile">
@@ -33,15 +33,17 @@
     </div>
     <button class="miniprofile-btn">Выйти</button>
   </div>
-  
 
   <div class="menu">
     <ul class="menu-nav">
-      <li class="menu-item menu-item_current">
-        <img src="img/menu/office-icon_active.svg" alt="" class="menu-item__img">
+      <a href="#" class="menu-btn btn">Скачать</a>
+
+
+      <a href="office.html" class="menu-item">
+        <img src="img/menu/office-icon.svg" alt="" class="menu-item__img">
         <span class="menu-item__text">Кабинет</span>
 
-      </li>
+      </a>
 
       <a href="structure.html" class="menu-item">
         <img src="img/menu/structure-icon.svg" alt="" class="menu-item__img">
@@ -72,8 +74,8 @@
         <span class="menu-item__text">Документы</span>
       </a>
 
-      <a href="news.html" class="menu-item">
-        <img src="img/menu/news-icon.svg" alt="" class="menu-item__img">
+      <a href="news.html" class="menu-item  menu-item_current">
+        <img src="img/menu/news-icon_active.svg" alt="" class="menu-item__img">
         <span class="menu-item__text">Новости компании</span>
       </a>
 
@@ -85,15 +87,61 @@
   </div>
 
   <main class="main">
-    <section class="section stucture">
+    <section class="section news">
 
       <div class="wrap">
         <div class="section-message">
           <img src="img/office/message-icon.svg" alt="">
         </div>
-        <h2 class="section-title">Новости компании</h2>
+        <h2 class="section-title">Новости компании </h2>
 
-     
+        <form action="#" class="news-search">
+          <input type="text" class="input news-search__input" placeholder="Поиск по новостям ">
+          <button class="btn news-search__btn">Найти</button>
+        </form>
+
+        <div class="news-wrap">
+          <div class="news-item box long">
+            <div class="news-item__img">
+              <img src="" alt="">
+            </div>
+            <div class="news-item__descr">
+              <span class="news-item__date">13.04.2020</span>
+              <h3 class="news-item__title">Большая встреча в Москве. Заговолок в две, может быть даже в четыре строки</h3>
+              <a href="news_item.html" class="news-item__btn btn">Читать</a>
+            </div>
+          </div>
+          <div class="news-item box short">
+            <div class="news-item__img">
+              <img src="" alt="">
+            </div>
+            <div class="news-item__descr">
+              <span class="news-item__date">13.04.2020</span>
+              <h3 class="news-item__title">Большая встреча в Москве. Заговолок в две, может быть даже в четыре строки</h3>
+              <a href="news_item.html" class="news-item__btn btn">Читать</a>
+            </div>
+          </div>
+          <div class="news-item box short">
+            <div class="news-item__img">
+              <img src="" alt="">
+            </div>
+            <div class="news-item__descr">
+              <span class="news-item__date">13.04.2020</span>
+              <h3 class="news-item__title">Большая встреча в Москве. Заговолок в две, может быть даже в четыре строки</h3>
+              <a href="news_item.html" class="news-item__btn btn">Читать</a>
+            </div>
+          </div>
+          <div class="news-item box long">
+            <div class="news-item__img">
+              <img src="" alt="">
+            </div>
+            <div class="news-item__descr">
+              <span class="news-item__date">13.04.2020</span>
+              <h3 class="news-item__title">Большая встреча в Москве. Заговолок в две, может быть даже в четыре строки</h3>
+              <a href="news_item.html" class="news-item__btn btn">Читать</a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
