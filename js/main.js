@@ -113,4 +113,28 @@
     })
   }
 
+  // FAQ 
+  var faqItems = document.querySelectorAll('.faq-item')
+
+  if (faqItems) {
+    faqItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        item.classList.toggle('active')
+      })
+    })
+  }
+
+  // Уведомления 
+  var notifies = document.querySelectorAll('.notify-item')
+  if (notifies) {
+    notifies.forEach(function (notify) {
+      notify.querySelector('.notify-item__img').addEventListener('click', function () {
+        notify.classList.add('closing')
+        setTimeout(function() {
+          notify.classList.remove('closing')
+          notify.style.display = 'none'
+        }, 1000);
+      })
+    })
+  }
 }());
