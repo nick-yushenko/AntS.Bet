@@ -52,21 +52,24 @@
 
   })
 
-  miniprofileTrigger.addEventListener('click', function () {
-    if (window.innerWidth <= 992) {
-      if (!isMiniprofile) {
-        miniprofile.style.right = '0'
-        miniprofile.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
+  if (miniprofile) {
+    miniprofileTrigger.addEventListener('click', function () {
+      if (window.innerWidth <= 992) {
+        if (!isMiniprofile) {
+          miniprofile.style.right = '0'
+          miniprofile.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
 
-        isMiniprofile = true
-      } else {
-        miniprofile.style.right = '-400px'
-        miniprofile.style.boxShadow = 'none'
+          isMiniprofile = true
+        } else {
+          miniprofile.style.right = '-400px'
+          miniprofile.style.boxShadow = 'none'
 
-        isMiniprofile = false
+          isMiniprofile = false
+        }
       }
-    }
-  })
+    })
+  }
+
 
 
 }());
