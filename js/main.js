@@ -128,13 +128,32 @@
   var notifies = document.querySelectorAll('.notify-item')
   if (notifies) {
     notifies.forEach(function (notify) {
-      notify.querySelector('.notify-item__img').addEventListener('click', function () {
+      notify.querySelector('.notify-item__close').addEventListener('click', function () {
         notify.classList.add('closing')
-        setTimeout(function() {
+        setTimeout(function () {
           notify.classList.remove('closing')
           notify.style.display = 'none'
         }, 1000);
       })
     })
+  }
+
+  // click on Password 
+
+  var passwordBlocks = document.querySelectorAll('.password-block')
+  if (passwordBlocks) {
+
+    passwordBlocks.forEach(function (item) {
+      item.querySelector('img').addEventListener('click', function () {
+        var icon = item.querySelector('img')
+        if (icon.getAttribute('src') == 'img/sign/show-password-icon.svg') {
+          icon.setAttribute('src', 'img/sign/hide-password-icon.svg')
+        } else {
+          icon.setAttribute('src', 'img/sign/show-password-icon.svg')
+        }
+        icon.classList.toggle('hide')
+      })
+    })
+
   }
 }());
