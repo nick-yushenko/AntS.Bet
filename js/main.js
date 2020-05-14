@@ -152,6 +152,14 @@
           icon.setAttribute('src', 'img/sign/show-password-icon.svg')
         }
         icon.classList.toggle('hide')
+
+        var input = item.querySelector('input')
+        if (input.getAttribute('type') == 'password') {
+          input.setAttribute('type', 'text')
+        } else {
+          input.setAttribute('type', 'password')
+
+        }
       })
     })
 
