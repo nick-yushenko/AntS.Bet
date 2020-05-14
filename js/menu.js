@@ -8,7 +8,7 @@
   var isMiniprofile = false
 
   menuTrigger.addEventListener('click', function () {
-    if (window.innerWidth <= 992) {
+    if (window.innerWidth <= 1025) {
       if (!isOpen) {
         menu.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
         if (window.innerWidth <= 768) {

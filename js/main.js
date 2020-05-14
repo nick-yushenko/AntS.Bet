@@ -97,7 +97,7 @@
 
   var modal = document.querySelector('.modal-wrap')
   var uiAdd = document.querySelectorAll('.path-item__logo.empty')
-
+  var modalCopy = document.querySelector('.modal-btn')
 
   if (uiAdd) {
     uiAdd.forEach(function (item) {
@@ -111,6 +111,11 @@
         modal.style.display = 'none';
       };
     })
+    if (window.innerWidth <= 575) {
+      modalCopy.addEventListener('click', function () {
+        modal.style.display = 'none';
+      })
+    }
   }
 
   // FAQ 
@@ -164,4 +169,30 @@
     })
 
   }
+
+  // structure ui in mobile 
+  if (window.innerWidth <= 500) {
+    var uiLines = document.querySelectorAll('.path-line')
+    uiLines.forEach(function (line) {
+      var uiItems = line.querySelectorAll('.path-item')
+      uiItems.forEach(function (item) {
+        var logo = item.querySelector('.path-item__logo')
+        logo.addEventListener('click', function () {
+          var drop = logo.querySelector('.drop')
+          if (drop.classList.contains('right')) {
+            for (var i = uiItems.length; i > 0; i--) {
+              uiItems[i - 1].style.zIndex = uiItems.length - i + 1 + ''
+            }
+          }
+          if (drop.classList.contains('left')) {
+            for (var i = 0; i < uiItems.length; i++) {
+              uiItems[i].style.zIndex = i + 1 + ''
+            }
+          }
+        })
+      })
+    })
+  }
+
+
 }());
