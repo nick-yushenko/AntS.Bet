@@ -174,28 +174,47 @@
 
   // structure ui in mobile 
   if (window.innerWidth <= 575) {
-    var uiLines = document.querySelectorAll('.path-line')
-    if (uiLines)
-      uiLines.forEach(function (line) {
-        var uiItems = line.querySelectorAll('.path-item')
-        uiItems.forEach(function (item) {
-          var logo = item.querySelector('.path-item__logo')
-          logo.addEventListener('click', function () {
-            var drop = logo.querySelector('.drop')
-            if (drop.classList.contains('right')) {
-              for (var i = uiItems.length; i > 0; i--) {
-                uiItems[i - 1].style.zIndex = uiItems.length - i + 1 + ''
-              }
-            }
-            if (drop.classList.contains('left')) {
-              for (var i = 0; i < uiItems.length; i++) {
-                uiItems[i].style.zIndex = i + 1 + ''
-              }
-            }
+    var logo = document.querySelectorAll('.path-item__logo')
+    if (logo) {
+      logo.forEach(function (item) {
+        item.addEventListener('click', function () {
+
+          logo.forEach(function (item) {
+            item.parentNode.style.zIndex = '1'
+
           })
+          item.parentNode.style.zIndex = '3'
+
         })
       })
+    }
   }
+  // if (window.innerWidth <= 575) {
+  //   var uiLines = document.querySelectorAll('.path-line')
+  //   if (uiLines)
+  //     uiLines.forEach(function (line) {
+  //       var uiItems = line.querySelectorAll('.path-item')
+  //       uiItems.forEach(function (item) {
+  //         var logo = item.querySelector('.path-item__logo')
+  //         logo.addEventListener('click', function () {
+  //           var drop = logo.querySelector('.drop')
+  //           if (drop.classList.contains('right')) {
+  //             for (var i = uiItems.length; i > 0; i--) {
+  //               uiItems[i - 1].style.zIndex = uiItems.length - i + 1 + ''
+  //               console.log('+')
+  //             }
+  //           }
+  //           if (drop.classList.contains('left')) {
+  //             for (var i = 0; i < uiItems.length; i++) {
+  //               uiItems[i].style.zIndex = i + 1 + ''
+  //               console.log('+')
+
+  //             }
+  //           }
+  //         })
+  //       })
+  //     })
+  // }
 
 
 }());
