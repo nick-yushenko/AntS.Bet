@@ -52,7 +52,7 @@
 
   })
 
-  if (miniprofile) {
+  if (miniprofileTrigger) {
     miniprofileTrigger.addEventListener('click', function () {
       if (window.innerWidth <= 992) {
         if (!isMiniprofile) {

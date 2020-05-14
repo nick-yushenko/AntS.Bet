@@ -111,10 +111,12 @@
         modal.style.display = 'none';
       };
     })
+
     if (window.innerWidth <= 575) {
-      modalCopy.addEventListener('click', function () {
-        modal.style.display = 'none';
-      })
+      if (modalCopy)
+        modalCopy.addEventListener('click', function () {
+          modal.style.display = 'none';
+        })
     }
   }
 
@@ -171,7 +173,7 @@
   }
 
   // structure ui in mobile 
-  if (window.innerWidth <= 500) {
+  if (window.innerWidth <= 575) {
     var uiLines = document.querySelectorAll('.path-line')
     if (uiLines)
       uiLines.forEach(function (line) {
