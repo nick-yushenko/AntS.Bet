@@ -98,26 +98,28 @@
   var isDrop = false
   var logo = document.querySelectorAll('.path-item__logo')
 
-  if (window.innerWidth <= 575) {
-    if (logo) {
-      logo.forEach(function (item) {
-        item.addEventListener('click', function () {
+  // if (window.innerWidth <= 575) {
+  //   if (logo) {
+  //     logo.forEach(function (item) {
+  //       item.addEventListener('click', function () {
 
-          logo.forEach(function (item) {
-            item.parentNode.style.zIndex = '1'
+  //         logo.forEach(function (item) {
+  //           item.parentNode.style.zIndex = '1'
 
-          })
-          item.parentNode.style.zIndex = '3'
-          setTimeout(() => {
-            if (!isDrop) {
-              item.querySelector('.drop').style.display = 'block'
-              isDrop = true
-            } 
-          }, 180);
-        })
-      })
-    }
-  }
+  //         })
+  //         item.parentNode.style.zIndex = '3'
+  //         setTimeout(() => {
+  //           if (!isDrop) {
+  //             item.querySelector('.drop').style.display = 'block'
+  //             isDrop = true
+  //           } 
+  //         }, 180);
+  //       })
+  //     })
+  //   }
+  // }
+
+
   // if (window.innerWidth <= 575) {
   //   var uiLines = document.querySelectorAll('.path-line')
   //   if (uiLines)
@@ -162,17 +164,17 @@
       if (event.target.className == 'modal-wrap') {
         modal.style.display = 'none';
       };
-      if (document.querySelectorAll('.drop'))
-        if (window.innerWidth <= 575)
-          if (isDrop)
-            if (event.target.className != 'drop') {
-              document.querySelectorAll('.drop').forEach(function (item) {
-                item.style.display = 'none'
-                isDrop = false
+      // if (document.querySelectorAll('.drop'))
+      //   if (window.innerWidth <= 575)
+      //     if (isDrop)
+      //       if (event.target.className != 'drop') {
+      //         document.querySelectorAll('.drop').forEach(function (item) {
+      //           item.style.display = 'none'
+      //           isDrop = false
 
-              })
+      //         })
 
-            }
+      //       }
 
     })
 
