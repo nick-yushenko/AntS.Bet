@@ -94,6 +94,58 @@
   }
 
 
+  // structure ui in mobile 
+  var isDrop = false
+  var logo = document.querySelectorAll('.path-item__logo')
+
+  if (window.innerWidth <= 575) {
+    if (logo) {
+      logo.forEach(function (item) {
+        item.addEventListener('click', function () {
+
+          logo.forEach(function (item) {
+            item.parentNode.style.zIndex = '1'
+
+          })
+          item.parentNode.style.zIndex = '3'
+          setTimeout(() => {
+            if (!isDrop) {
+              item.querySelector('.drop').style.display = 'block'
+              isDrop = true
+            } 
+          }, 180);
+        })
+      })
+    }
+  }
+  // if (window.innerWidth <= 575) {
+  //   var uiLines = document.querySelectorAll('.path-line')
+  //   if (uiLines)
+  //     uiLines.forEach(function (line) {
+  //       var uiItems = line.querySelectorAll('.path-item')
+  //       uiItems.forEach(function (item) {
+  //         var logo = item.querySelector('.path-item__logo')
+  //         logo.addEventListener('click', function () {
+  //           var drop = logo.querySelector('.drop')
+  //           if (drop.classList.contains('right')) {
+  //             for (var i = uiItems.length; i > 0; i--) {
+  //               uiItems[i - 1].style.zIndex = uiItems.length - i + 1 + ''
+  //               console.log('+')
+  //             }
+  //           }
+  //           if (drop.classList.contains('left')) {
+  //             for (var i = 0; i < uiItems.length; i++) {
+  //               uiItems[i].style.zIndex = i + 1 + ''
+  //               console.log('+')
+
+  //             }
+  //           }
+  //         })
+  //       })
+  //     })
+  // }
+
+  // modal
 
   var modal = document.querySelector('.modal-wrap')
   var uiAdd = document.querySelectorAll('.path-item__logo.empty')
@@ -110,6 +162,18 @@
       if (event.target.className == 'modal-wrap') {
         modal.style.display = 'none';
       };
+      if (document.querySelectorAll('.drop'))
+        if (window.innerWidth <= 575)
+          if (isDrop)
+            if (event.target.className != 'drop') {
+              document.querySelectorAll('.drop').forEach(function (item) {
+                item.style.display = 'none'
+                isDrop = false
+
+              })
+
+            }
+
     })
 
     if (window.innerWidth <= 575) {
@@ -172,49 +236,6 @@
 
   }
 
-  // structure ui in mobile 
-  if (window.innerWidth <= 575) {
-    var logo = document.querySelectorAll('.path-item__logo')
-    if (logo) {
-      logo.forEach(function (item) {
-        item.addEventListener('click', function () {
-
-          logo.forEach(function (item) {
-            item.parentNode.style.zIndex = '1'
-
-          })
-          item.parentNode.style.zIndex = '3'
-
-        })
-      })
-    }
-  }
-  // if (window.innerWidth <= 575) {
-  //   var uiLines = document.querySelectorAll('.path-line')
-  //   if (uiLines)
-  //     uiLines.forEach(function (line) {
-  //       var uiItems = line.querySelectorAll('.path-item')
-  //       uiItems.forEach(function (item) {
-  //         var logo = item.querySelector('.path-item__logo')
-  //         logo.addEventListener('click', function () {
-  //           var drop = logo.querySelector('.drop')
-  //           if (drop.classList.contains('right')) {
-  //             for (var i = uiItems.length; i > 0; i--) {
-  //               uiItems[i - 1].style.zIndex = uiItems.length - i + 1 + ''
-  //               console.log('+')
-  //             }
-  //           }
-  //           if (drop.classList.contains('left')) {
-  //             for (var i = 0; i < uiItems.length; i++) {
-  //               uiItems[i].style.zIndex = i + 1 + ''
-  //               console.log('+')
-
-  //             }
-  //           }
-  //         })
-  //       })
-  //     })
-  // }
 
 
 }());
