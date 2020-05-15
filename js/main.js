@@ -1,4 +1,76 @@
 (function () {
+
+  //menu
+  var menu = document.querySelector('.menu')
+  var menuTrigger = document.querySelector('.js-menuTrigger')
+  var miniprofileTrigger = document.querySelector('.js-miniprofileTrigger')
+  var miniprofile = document.querySelector('.miniprofile')
+  var isOpen = false
+  var isMiniprofile = false
+
+  menuTrigger.addEventListener('click', function () {
+    if (window.innerWidth <= 1025) {
+      if (!isOpen) {
+        menu.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
+        if (window.innerWidth <= 768) {
+          menu.style.transform = 'translateX(0)'
+          menu.style.width = '340px'
+        }
+        if (window.innerWidth <= 425) {
+          menu.style.width = '100%'
+        } else
+          menu.style.width = '340px'
+
+        isOpen = true
+      } else {
+        menu.style.boxShadow = 'none'
+        if (window.innerWidth <= 768) {
+          menu.style.transform = 'translateX(-100px)'
+          menu.style.width = '0'
+        }
+        if (window.innerWidth <= 1024)
+          menu.style.width = '70px'
+        else
+          menu.style.width = '70px'
+
+        isOpen = false
+
+      }
+    } else {
+      // Открытие минипрофиля 
+      if (!isMiniprofile) {
+        miniprofile.style.right = '0'
+        miniprofile.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
+
+        isMiniprofile = true
+      } else {
+        miniprofile.style.right = '-400px'
+        miniprofile.style.boxShadow = 'none'
+
+        isMiniprofile = false
+      }
+    }
+
+  })
+
+  if (miniprofileTrigger) {
+    miniprofileTrigger.addEventListener('click', function () {
+      if (window.innerWidth <= 992) {
+        if (!isMiniprofile) {
+          miniprofile.style.right = '0'
+          miniprofile.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
+
+          isMiniprofile = true
+        } else {
+          miniprofile.style.right = '-400px'
+          miniprofile.style.boxShadow = 'none'
+
+          isMiniprofile = false
+        }
+      }
+    })
+  }
+
   // switch btn 
 
   if (window.NodeList && !NodeList.prototype.forEach) {
@@ -94,59 +166,6 @@
   }
 
 
-  // structure ui in mobile 
-  var isDrop = false
-  var logo = document.querySelectorAll('.path-item__logo')
-
-  // if (window.innerWidth <= 575) {
-  //   if (logo) {
-  //     logo.forEach(function (item) {
-  //       item.addEventListener('click', function () {
-
-  //         logo.forEach(function (item) {
-  //           item.parentNode.style.zIndex = '1'
-
-  //         })
-  //         item.parentNode.style.zIndex = '3'
-  //         setTimeout(() => {
-  //           if (!isDrop) {
-  //             item.querySelector('.drop').style.display = 'block'
-  //             isDrop = true
-  //           } 
-  //         }, 180);
-  //       })
-  //     })
-  //   }
-  // }
-
-
-  // if (window.innerWidth <= 575) {
-  //   var uiLines = document.querySelectorAll('.path-line')
-  //   if (uiLines)
-  //     uiLines.forEach(function (line) {
-  //       var uiItems = line.querySelectorAll('.path-item')
-  //       uiItems.forEach(function (item) {
-  //         var logo = item.querySelector('.path-item__logo')
-  //         logo.addEventListener('click', function () {
-  //           var drop = logo.querySelector('.drop')
-  //           if (drop.classList.contains('right')) {
-  //             for (var i = uiItems.length; i > 0; i--) {
-  //               uiItems[i - 1].style.zIndex = uiItems.length - i + 1 + ''
-  //               console.log('+')
-  //             }
-  //           }
-  //           if (drop.classList.contains('left')) {
-  //             for (var i = 0; i < uiItems.length; i++) {
-  //               uiItems[i].style.zIndex = i + 1 + ''
-  //               console.log('+')
-
-  //             }
-  //           }
-  //         })
-  //       })
-  //     })
-  // }
-
   // modal
 
   var modal = document.querySelector('.modal-wrap')
@@ -164,17 +183,6 @@
       if (event.target.className == 'modal-wrap') {
         modal.style.display = 'none';
       };
-      // if (document.querySelectorAll('.drop'))
-      //   if (window.innerWidth <= 575)
-      //     if (isDrop)
-      //       if (event.target.className != 'drop') {
-      //         document.querySelectorAll('.drop').forEach(function (item) {
-      //           item.style.display = 'none'
-      //           isDrop = false
-
-      //         })
-
-      //       }
 
     })
 
