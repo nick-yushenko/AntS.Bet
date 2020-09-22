@@ -1,251 +1,168 @@
-(function () {
+const toRules = document.querySelectorAll('.toRules')
+const toRegister = document.querySelectorAll('.toRegister')
 
-  //menu
-  var menu = document.querySelector('.menu')
-  var menuTrigger = document.querySelector('.js-menuTrigger')
-  var miniprofileTrigger = document.querySelector('.js-miniprofileTrigger')
-  var miniprofile = document.querySelector('.miniprofile')
-  var isOpen = false
-  var isMiniprofile = false
+// тригер на открытие попапа "Спасибо" 
+const toThanks = document.querySelectorAll('.toThanks')
 
-  menuTrigger.addEventListener('click', function () {
-    if (window.innerWidth <= 1025) {
-      if (!isOpen) {
-        menu.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
-        if (window.innerWidth <= 768) {
-          menu.style.transform = 'translateX(0)'
-          menu.style.width = '340px'
-        }
-        if (window.innerWidth <= 425) {
-          menu.style.width = '100%'
-        } else
-          menu.style.width = '340px'
+const rulesModal = document.querySelector('#rulesModal')
+const registerModal = document.querySelector('#registerModal')
 
-        isOpen = true
-      } else {
-        menu.style.boxShadow = 'none'
-        if (window.innerWidth <= 768) {
-          menu.style.transform = 'translateX(-100px)'
-          menu.style.width = '0'
-        }
-        if (window.innerWidth <= 1024)
-          menu.style.width = '70px'
-        else
-          menu.style.width = '70px'
+// попап "Спасибо"
+const thanksModal = document.querySelector('#thanksModal')
 
-        isOpen = false
 
-      }
-    } else {
-      // Открытие минипрофиля 
-      if (!isMiniprofile) {
-        miniprofile.style.right = '0'
-        miniprofile.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
 
-        isMiniprofile = true
-      } else {
-        miniprofile.style.right = '-400px'
-        miniprofile.style.boxShadow = 'none'
+const closeModal = document.querySelectorAll('.modal-close')
 
-        isMiniprofile = false
-      }
-    }
+// Закрытие попапа "Спасибо"
+const closeThanks = thanksModal.querySelector('.close')
+
+if (closeModal)
+  closeModal.forEach(item => {
+    item.addEventListener('click', function () {
+      if (rulesModal)
+        rulesModal.classList.remove('active')
+      if (registerModal)
+        registerModal.classList.remove('active')
+
+      document.querySelector('body').style.overflowY = 'auto'
+
+    })
+  })
+if (toRules && rulesModal)
+  toRules.forEach(item => {
+    item.addEventListener('click', function () {
+      rulesModal.classList.add('active')
+      document.querySelector('body').style.overflowY = 'hidden'
+    })
+  })
+
+if (toRegister && registerModal)
+  toRegister.forEach(item => {
+    item.addEventListener('click', function () {
+      registerModal.classList.add('active')
+      document.querySelector('body').style.overflowY = 'hidden'
+    })
+  })
+
+
+// открытие попапа "Спасибо"
+if (toThanks && thanksModal)
+  toThanks.forEach(item => {
+    item.addEventListener('click', function () {
+      thanksModal.classList.add('active')
+      document.querySelector('body').style.overflowY = 'hidden'
+    })
+  })
+
+if (thanksModal && closeThanks)
+  closeThanks.addEventListener('click', function () {
+    thanksModal.classList.remove('active')
+
+    document.querySelector('body').style.overflowY = 'auto'
 
   })
 
-  if (miniprofileTrigger) {
-    miniprofileTrigger.addEventListener('click', function () {
-      if (window.innerWidth <= 992) {
-        if (!isMiniprofile) {
-          miniprofile.style.right = '0'
-          miniprofile.style.boxShadow = '0px 0px 10px rgba(79, 255, 202, 0.7)'
+//  Слайдеры
 
-          isMiniprofile = true
-        } else {
-          miniprofile.style.right = '-400px'
-          miniprofile.style.boxShadow = 'none'
+var programSlider = new Swiper('.program-slider', {
+  // Optional parameters
+  direction: 'horizontal',
+  speed: 500,
+  spaceBetween: 50,
 
-          isMiniprofile = false
-        }
-      }
-    })
-  }
-
-  // switch btn 
-
-  if (window.NodeList && !NodeList.prototype.forEach) {
-    NodeList.prototype.forEach = function (callback, thisArg) {
-      thisArg = thisArg || window;
-      for (var i = 0; i < this.length; i++) {
-        callback.call(thisArg, this[i], i, this);
-      }
-    };
-  }
+  // Navigation arrows
+  navigation: {
+    nextEl: '.program-slider__next',
+    prevEl: '.program-slider__prev',
+  },
 
 
-  var switches = document.querySelectorAll('.switch-btn')
+})
+const programSlides = document.querySelectorAll('.program-slide')
+const programPrev = document.querySelector('.program-slider__prev')
+const programNext = document.querySelector('.program-slider__next')
 
-  if (switches) {
-    switches.forEach(function (switchItem) {
-      switchItem.addEventListener('click', function () {
-        switchItem.classList.toggle('switch-on')
-      })
-    })
-  }
+programSlider.on('slideChange', function () {
+  if (programSlider.activeIndex == 0)
+    programPrev.classList.remove('clickable')
+  else
+    programPrev.classList.add('clickable')
+
+  if (programSlider.activeIndex == (programSlides.length - 1))
+    programNext.classList.remove('clickable')
+  else
+    programNext.classList.add('clickable')
+});
 
 
-  if (window.innerWidth <= 1300) {
-    var packegesSwiper = new Swiper('.packeges-wrap ', {
-      direction: 'horizontal',
-      speed: 220,
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: '.swiper-pagination',
+function setBoostSlider() {
+  // if (window.innerWidth <= 768)
+  //   const emptySlide = document.querySelectorAll('.boost-slide.empty')
+
+  var boostSlider = new Swiper('.boost-slider', {
+    // Optional parameters
+    direction: 'horizontal',
+    speed: 300,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+
+    navigation: {
+      nextEl: '.boost-slider__next',
+      prevEl: '.boost-slider__prev',
+    },
+    breakpoints: {
+      // when window width is >= 320px
+      768: {
+        slidesPerView: 3,
+        freeMode: false,
+
       },
-      updateOnWindowResize: true,
-      breakpoints: {
-        // when window width is >= 320px
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20
-        },
-        // when window width is >= 500px
-        500: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        // when window width is >= 500px
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 20
-        },
-      }
+      425: {
+        slidesPerView: 1,
+        spaceBetween: 20,
 
-    })
-
-  }
-
-  function initSwiper() {
-    var newsSwiper = new Swiper('.office-news-container', {
-      direction: 'horizontal',
-      loop: true,
-      speed: 220,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
       },
-      navigation: {
-        prevEl: '.office-news-nav__left',
-        nextEl: '.office-news-nav__right',
-      },
-    })
-  }
-
-  initSwiper()
-
-  window.addEventListener('resize', function (e) {
-    initSwiper()
-  }, false);
 
 
-
-  // payment 
-
-  var paymentBtns = document.querySelectorAll('.payment-buttons__item')
-
-  if (paymentBtns) {
-    paymentBtns.forEach(function (item) {
-      item.addEventListener('click', function () {
-        paymentBtns.forEach(function (item) {
-          item.classList.remove('btn-primary')
-        })
-        item.classList.add('btn-primary')
-      })
-    })
-  }
-
-
-  // modal
-
-  var modal = document.querySelector('.modal-wrap')
-  var uiAdd = document.querySelectorAll('.path-item__logo.empty')
-  var modalCopy = document.querySelector('.modal-btn')
-
-  if (uiAdd) {
-    uiAdd.forEach(function (item) {
-      item.addEventListener('click', function () {
-        modal.style.display = 'flex'
-      })
-    })
-
-    document.addEventListener('click', function (event) {
-      if (event.target.className == 'modal-wrap') {
-        modal.style.display = 'none';
-      };
-
-    })
-
-    if (window.innerWidth <= 575) {
-      if (modalCopy)
-        modalCopy.addEventListener('click', function () {
-          modal.style.display = 'none';
-        })
     }
-  }
 
-  // FAQ 
-  var faqItems = document.querySelectorAll('.faq-item')
 
-  if (faqItems) {
-    faqItems.forEach(function (item) {
-      item.addEventListener('click', function () {
-        item.classList.toggle('active')
-      })
+  })
+
+  if (window.innerWidth > 768 || window.innerWidth <= 425 )
+    boostSlider.slideTo(1)
+
+  const boostSlides = document.querySelectorAll('.boost-slide')
+  const boostPrev = document.querySelector('.boost-slider__prev')
+  const boostNext = document.querySelector('.boost-slider__next')
+
+  boostSlides.forEach(item => {
+    item.classList.remove('current')
+  })
+  boostSlides[boostSlider.activeIndex + 1].classList.add('current')
+
+  boostSlider.on('slideChange', function () {
+    if (boostSlider.activeIndex == 0)
+      boostPrev.classList.remove('clickable')
+    else
+      boostPrev.classList.add('clickable')
+
+    if (boostSlider.activeIndex == 3)
+      boostNext.classList.remove('clickable')
+    else
+      boostNext.classList.add('clickable')
+
+    boostSlides.forEach(item => {
+      item.classList.remove('current')
     })
-  }
+    boostSlides[boostSlider.activeIndex + 1].classList.add('current')
 
-  // Уведомления 
-  var notifies = document.querySelectorAll('.notify-item')
-  if (notifies) {
-    notifies.forEach(function (notify) {
-      notify.querySelector('.notify-item__close').addEventListener('click', function () {
-        notify.classList.add('closing')
-        setTimeout(function () {
-          notify.classList.remove('closing')
-          notify.style.display = 'none'
-        }, 1000);
-      })
-    })
-  }
-
-  // click on Password 
-
-  var passwordBlocks = document.querySelectorAll('.password-block')
-  if (passwordBlocks) {
-
-    passwordBlocks.forEach(function (item) {
-      item.querySelector('img').addEventListener('click', function () {
-        var icon = item.querySelector('img')
-        if (icon.getAttribute('src') == 'img/sign/show-password-icon.svg') {
-          icon.setAttribute('src', 'img/sign/hide-password-icon.svg')
-        } else {
-          icon.setAttribute('src', 'img/sign/show-password-icon.svg')
-        }
-        icon.classList.toggle('hide')
-
-        var input = item.querySelector('input')
-        if (input.getAttribute('type') == 'password') {
-          input.setAttribute('type', 'text')
-        } else {
-          input.setAttribute('type', 'password')
-
-        }
-      })
-    })
-
-  }
+  });
 
 
+  boostSlides[boostSlider.activeIndex + 1];
+}
 
-}());
+if (window.innerWidth <= 1024)
+  setBoostSlider()
